@@ -44,7 +44,7 @@ struct matricula {
     char turno[20];
 };
 
-// vetores que vao servir de banco de dados na memoria msm
+// vetores que vao servir de banco de dados na memoria mesmo
 struct aluno a, tbaluno[max];
 struct curso c, tbcurso[max];
 struct turma t, tbturma[max];
@@ -52,7 +52,7 @@ struct matricula m, tbmatricula[max];
 
 // --- funcoes de validacao ---
 
-// checa se o campo ta vazio (se o cara so deu enter sem querer)
+// checa se o campo ta vazio (se o enter foi sem querer)
 int campoVazio(const char *str) {
     return (strlen(str) == 0);
 }
@@ -85,7 +85,7 @@ int validarData(const char *data) {
 }
 
 // --- buscas ---
-// varre o vetor procurando o id. se n achar retorna -1
+// varre o vetor procurando o id. se nao achar retorna -1
 
 int buscarAluno(const char *cpf) {
     int i;
@@ -120,7 +120,7 @@ int buscarMatricula(int ra) {
 }
 
 // --- checagem de integridade ---
-// ve se tem matricula presa ao aluno/curso/turma antes de deixar excluir
+// checa se tem matricula presa ao aluno/curso/turma antes de deixar excluir
 int temMatriculaVinculada(const char *cpf, int codCurso, int codTurma, int tipo) {
     int i;
     for (i = 0; i < idm; i++) {
@@ -353,7 +353,7 @@ int main() {
                 scanf("%d", &sop);
                 if (sop == 5) break;
 
-                // faz a pesquisa dependendo doq o usuario escolheu
+                // faz a pesquisa dependendo do que o usuario escolheu
                 if (sop == 1) {
                     printf("\nDigite o CPF do Aluno: ");
                     scanf("%s", buscaCpf);
@@ -391,7 +391,7 @@ int main() {
                     idx = buscarAluno(buscaCpf);
                     if (idx != -1) {
                         limparBuffer();
-                        // usando as msm validacoes do cadastro p/ nao dar ruim
+                        // usando as mesmas validacoes do cadastro p/ nao dar erro
                         do {
                             printf("Novo Nome: "); 
                             fgets(tbaluno[idx].nome, max, stdin); 
@@ -466,7 +466,7 @@ int main() {
                         printf("\nDados alterados com sucesso!");
                     } else printf("Turma não encontrada.");
                 } else if (sop == 4) {
-                    // qnd altera a matricula tem q checar de novo se os ids novos existem msm
+                    // quando altera a matricula tem que checar de novo se os ids novos existem mesmo
                     printf("\nDigite o RA da matrícula a alterar: ");
                     scanf("%d", &buscaId);
                     idx = buscarMatricula(buscaId);
@@ -505,7 +505,7 @@ int main() {
                 scanf("%d", &sop);
                 if (sop == 5) break;
 
-                // exclusao checando integridade p n dar b.o dps
+                // exclusao checando integridade p/ nao dar problema no futuro
                 if (sop == 1) {
                     printf("\nDigite o CPF do aluno para excluir: ");
                     scanf("%s", buscaCpf);
