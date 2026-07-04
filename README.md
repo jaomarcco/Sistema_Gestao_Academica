@@ -4,6 +4,14 @@ Projeto desenvolvido para a disciplina de programação do curso de Engenharia d
 
 ▶️ **[Assista à demonstração do sistema no YouTube](https://youtu.be/ycaqaLASZlU?si=bh8lzvnWicfuDk8A)**
 
+## 👥 Integrantes da Equipe
+
+- Davi Lopes Amorim
+- David Augusto Ribeiro Lima dos Santos
+- Ivan de Brito Cunha Junior
+- João Marcos de Jesus Santos
+- Joel Pereira Costa
+
 ## 🚀 Funcionalidades
 
 O sistema implementa o ciclo completo de operações **CRUD** e garante a consistência dos dados através de regras estritas:
